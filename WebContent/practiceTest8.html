@@ -2,12 +2,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script type="text/javascript">
-function hoge(e) {
-	alert(document.getElementById("tt").value);
-	location.href = "http://minitest.com/" + document.getElementById("tt").value;
-}
-</script>
 
 <title>入力フォーム</title>
 <link href="practiceTest8.css" rel="Stylesheet">
@@ -15,62 +9,59 @@ function hoge(e) {
 <body>
 <main>
 
-	<form action="#" method="post">
+	<form action="form.html" method="GET">
 	<table>
 		<tr>
 			<th>名前：</th>
-			<td> <input type="text" name="name" id="tt" ></td>
+			<td> <input type="text" name="name" id="name" ></td>
 		</tr>
 
 
 		<tr>
 			<th>メールアドレス： </th>
-			<td><input type="text" name="mail" ></td>
+			<td><input type="text" name="mail" id="mail"></td>
 		</tr>
 
 
 		<tr>
 			<th>誕生日:</th>
-			<td><select id="month"><option value="0">--</option></select>月
-				<select id="day"><option value="0">--</option></select>日</td>
+			<td><select id="month" name="month"><option value="">--</option></select>月
+				<select id="day" name="day"><option value="">--</option></select>日</td>
 		</tr>
 
 		<tr>
 			<th>性別：</th>
-			 <td><label class="contact-sex">
-				<input type="radio" name="male" /> <span class="contact-sex-txt">男</span>
-			</label>
+			 <td>
+				<input type="radio" name="gender" value="male"/> <span class="contact-sex-txt">男</span>
 
-				<label class="contact-sex"> <input type="radio" name="female" />
-				<span class="contact-sex-txt">女</span>
-				</label>
+				<input type="radio" name="gender" value="female"/><span class="contact-sex-txt">女</span>
 			</td>
 		</tr>
 
 		<tr>
 			<th>OS:</th>
 			<td><label class="contact-os">
-      				<input type="checkbox" name="os" />
+      				<input type="checkbox" name="os" value="Windows7" />
       				<span class="contact-os-txt">Windows7</span>
     			</label>
 
     			<label class="contact-os">
-     		 		<input type="checkbox" name="os" />
+     		 		<input type="checkbox" name="os" value="Windows8"/>
      		 		<span class="contact-os-txt">Windows8</span>
     			</label>
 
     			<label class="contact-os">
-     		 		<input type="checkbox" name="os" />
+     		 		<input type="checkbox" name="os"value="Windows10" />
       				<span class="contact-os-txt">Windows10</span>
     			</label>
 
    	   			<label class="contact-os">
-      				<input type="checkbox" name="os" />
+      				<input type="checkbox" name="os" value="Mac"/>
       				<span class="contact-os-txt">Mac</span>
    			 	</label>
 
    			 	<label class="contact-os">
-      				<input type="checkbox" name="os" />
+      				<input type="checkbox" name="os" value="Linux"/>
       				<span class="contact-os-txt">Linux</span>
    			 	</label>
    			 </td>
@@ -85,7 +76,7 @@ function hoge(e) {
 		</tr>
 
 		<tr>
-			<td><a href ="form.html"><input type="button" value="登録" OnSubmit="return hoge(this.form);"></a></td>
+			<td><input type="submit" value="登録" formaction="form.html"></td>
 		</tr>
 	</table>
 	</form>
